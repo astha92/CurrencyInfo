@@ -10,7 +10,7 @@ import RealmSwift
 public class CICoinInfo:Object {
     @objc dynamic var symbol = ""
     @objc dynamic var coinName = ""
-    
+    @objc dynamic var isFollowed = false
     override public static func primaryKey() -> String? {
         return "symbol"
     }

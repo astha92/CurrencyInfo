@@ -7,7 +7,25 @@
 		<key>CurrencyInfo.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>10</integer>
+			<integer>12</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>EF19927D201F698900D06A94</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EF199293201F698900D06A94</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EF19929E201F698900D06A94</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

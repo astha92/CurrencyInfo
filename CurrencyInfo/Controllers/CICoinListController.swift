@@ -18,7 +18,10 @@ class CICoinListController: UIViewController, UIScrollViewDelegate {
         super.viewDidLoad()
         coinListTableView.tableFooterView = UIView()
         coinListTableView.rx.setDelegate(self).disposed(by: disposeBag)
-        
+        viewModel.dataSource.asObservable().bind(to: coinListTableView.rx.items(cellIdentifier: "infoCell", cellType: CICoinInfoTableViewCell.self)) {
+            (row, element, cell) in
+                cell.initCell(name: element.coinName, sym: element.symbol)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -29,7 +32,4 @@ class CICoinListController: UIViewController, UIScrollViewDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
-    
 }

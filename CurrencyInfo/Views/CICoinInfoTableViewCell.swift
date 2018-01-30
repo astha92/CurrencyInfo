@@ -11,13 +11,13 @@ public class CICoinInfoTableViewCell : UITableViewCell {
     
     @IBOutlet weak var coinName: UILabel!
     @IBOutlet weak var coinSymbol: UILabel!
-    
+    var viewModel:CICoinFollowViewModel = CICoinFollowViewModel()
     public func initCell(name:String, sym:String) {
         coinName.text = name
         coinSymbol.text = sym
     }
     @IBAction func followButtonTapped(_ sender: Any) {
-        
+        viewModel.updateFollowList(symbol:coinSymbol.text!)
     }
     
 }

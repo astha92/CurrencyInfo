@@ -25,6 +25,8 @@
 		EF1992C9201F6E0800D06A94 /* CICoinFollowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1992C8201F6E0800D06A94 /* CICoinFollowViewModel.swift */; };
 		EF1992CB201F6F0700D06A94 /* CICoinModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1992CA201F6F0700D06A94 /* CICoinModel.swift */; };
 		EF78CFB4201F757A00843D9A /* CICoinInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF78CFB3201F757A00843D9A /* CICoinInfoTableViewCell.swift */; };
+		EF78CFB62020780300843D9A /* CICoinFollowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF78CFB52020780300843D9A /* CICoinFollowTableViewCell.swift */; };
+		EF78CFB820209F7200843D9A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EF78CFB720209F7200843D9A /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +77,8 @@
 		EF1992C8201F6E0800D06A94 /* CICoinFollowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CICoinFollowViewModel.swift; sourceTree = "<group>"; };
 		EF1992CA201F6F0700D06A94 /* CICoinModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CICoinModel.swift; sourceTree = "<group>"; };
 		EF78CFB3201F757A00843D9A /* CICoinInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CICoinInfoTableViewCell.swift; sourceTree = "<group>"; };
+		EF78CFB52020780300843D9A /* CICoinFollowTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CICoinFollowTableViewCell.swift; sourceTree = "<group>"; };
+		EF78CFB720209F7200843D9A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +167,7 @@
 				EF199281201F698900D06A94 /* AppDelegate.swift */,
 				EF19928A201F698900D06A94 /* Assets.xcassets */,
 				EF19928C201F698900D06A94 /* LaunchScreen.storyboard */,
+				EF78CFB720209F7200843D9A /* GoogleService-Info.plist */,
 				EF19928F201F698900D06A94 /* Info.plist */,
 			);
 			path = CurrencyInfo;
@@ -225,6 +230,7 @@
 			isa = PBXGroup;
 			children = (
 				EF78CFB3201F757A00843D9A /* CICoinInfoTableViewCell.swift */,
+				EF78CFB52020780300843D9A /* CICoinFollowTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -380,6 +386,7 @@
 				EF19928E201F698900D06A94 /* LaunchScreen.storyboard in Resources */,
 				EF19928B201F698900D06A94 /* Assets.xcassets in Resources */,
 				EF199289201F698900D06A94 /* Main.storyboard in Resources */,
+				EF78CFB820209F7200843D9A /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -546,6 +553,7 @@
 				EF1992C1201F6CE400D06A94 /* CIDao.swift in Sources */,
 				EF78CFB4201F757A00843D9A /* CICoinInfoTableViewCell.swift in Sources */,
 				EF1992C9201F6E0800D06A94 /* CICoinFollowViewModel.swift in Sources */,
+				EF78CFB62020780300843D9A /* CICoinFollowTableViewCell.swift in Sources */,
 				EF199282201F698900D06A94 /* AppDelegate.swift in Sources */,
 				EF1992C7201F6DEC00D06A94 /* CICoinListViewModel.swift in Sources */,
 				EF1992BD201F6B1C00D06A94 /* CIFollowController.swift in Sources */,
@@ -719,7 +727,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8737F56868;
 				INFOPLIST_FILE = CurrencyInfo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ci.CurrencyInfo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -734,7 +744,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8737F56868;
 				INFOPLIST_FILE = CurrencyInfo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ci.CurrencyInfo;
 				PRODUCT_NAME = "$(TARGET_NAME)";

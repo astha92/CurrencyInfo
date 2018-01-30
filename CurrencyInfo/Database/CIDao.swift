@@ -20,9 +20,17 @@ public class CIDao {
                 realm?.add(coin, update: true)
             }
         }
-        
-        var res:Results<CICoinInfo> = (realm?.objects(CICoinInfo.self))!
-        print(res.count)
+    }
+    
+    public func getAllCoins() -> Results<CICoinInfo>? {
+        return realm?.objects(CICoinInfo.self)
+    }
+    
+    public func followCoin(symbol:String) {
+        let coin:CICoinInfo = (realm?.object(ofType: CICoinInfo.self, forPrimaryKey: symbol))!
+        try! realm?.write() {
+            coin.isFollowed = true
+        }
     }
 }
 

@@ -7,13 +7,25 @@
 //
 
 import Foundation
+import RxRealm
+import RxCocoa
+import RxSwift
+import RealmSwift
 public class CICoinFollowViewModel {
-    //  var viewDelegate : CryptoTrackerViewModelDelegate!
     let ciDao:CIDao = CIDao()
     let appService:CIService = CIService()
-    var priceData:[CICoinInfo]!
-    public func updateArrayValues() {
-        //        appService.makeValueGETRequest()
-        //        viewDelegate.updateList(priceArray: ctDao.getAllPrices())
+    private let privateDataSource: Variable<[CICoinInfo]> = Variable([])
+    private let disposeBag = DisposeBag()
+    let dataSource: Observable<[CICoinInfo]>
+    init() {
+        let realm = try! Realm()
+        let values = realm.objects(CICoinInfo.self)
+        dataSource = privateDataSource.asObservable()
+        Observable.array(from: values).map {
+                $0.filter{$0.isFollowed == true}
+        }.bind(to: privateDataSource).disposed(by: disposeBag)
+    }
+    public func updateFollowList(symbol:String) {
+        ciDao.followCoin(symbol: symbol)
     }
 }

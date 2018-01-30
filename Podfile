@@ -12,6 +12,7 @@ target 'CurrencyInfo' do
   # pod 'SwiftyJSONRealmObject'
    pod 'ObjectMapper', '~> 3.1'
    pod 'RxRealm'
+   pod 'Firebase/Core'
   # Pods for CurrencyInfo
 
   target 'CurrencyInfoTests' do

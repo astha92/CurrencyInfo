@@ -14,21 +14,21 @@ import RxRealm
 public class CICoinListViewModel {
     let ciDao:CIDao = CIDao()
     let appService:CIService = CIService()
-    var coinInfo:[CICoinInfo]!
-    
+    private let privateDataSource: Variable<[CICoinInfo]> = Variable([])
+    private let disposeBag = DisposeBag()
+    let dataSource: Observable<[CICoinInfo]>
     init() {
         let realm = try! Realm()
         let values = realm.objects(CICoinInfo.self)
-        Observable.array(from: values).subscribe(onNext: { text  in
-            self.coinInfo = text
-            //print("++++++++++++++++", (text as! [CICoinInfo]).first?.coinName)
-        })
-        
+        dataSource = privateDataSource.asObservable()
+        Observable.array(from: values).subscribe(onNext: { [unowned self] text  in
+            if (text.last == nil) {
+                return
+            }
+            self.privateDataSource.value.append(text.last!)
+        }).disposed(by: disposeBag)
     }
-   // var dataSource:Observable<[CICoinInfo]>
     public func updateList() {
-        
-      // Observable.as
         appService.fetchCoinsInfo()
     }
 }
