@@ -15,23 +15,22 @@ class CIService {
     init() {
         sessionManager = Alamofire.SessionManager.default
     }
-    let url = URL(string: "https://www.cryptocompare.com/api/data/coinlist/")
+    let url = URL(string: "https://min-api.cryptocompare.com/data/all/coinlist")
     public func fetchCoinsInfo() {
         sessionManager.request(url!).validate(statusCode: 200..<300).responseJSON { response in
             switch response.result {
             case .success:
-                guard let jsonResponse = response.result.value as? [String:Any] else {
+                guard let jsonResponse = response.result.value as? [String: Any] else {
                     return
                 }
-                let json = jsonResponse["Data"] as! [String:Any]
-                guard let coin:CICoinModel = Mapper<CICoinModel>().map(JSON: json) else {
+								let json = Array((jsonResponse["Data"] as! [String: Any]).values) as! [[String: Any]]
+                guard let coins = Mapper<CICoinModel>().mapArray(JSONArray: json) else {
                     return
                 }
-                self.ciDao.updateCoinInfo(coins: [CICoinModel.getCoinData(model: coin)])
+                self.ciDao.updateCoinInfo(coins: CICoinModel.getCoinDataArray(coins: coins))
             case .failure(let error):
                 print(error)
             }
-            
         }
     }
 }
