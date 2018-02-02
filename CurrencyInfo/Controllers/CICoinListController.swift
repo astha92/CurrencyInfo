@@ -13,6 +13,7 @@ import RxCocoa
 class CICoinListController: UIViewController, UIScrollViewDelegate {
     var viewModel:CICoinListViewModel = CICoinListViewModel()
     @IBOutlet weak var coinListTableView: UITableView!
+    @IBOutlet weak var coinLabel: UILabel!
     let disposeBag = DisposeBag()
     override func viewDidLoad() {
         super.viewDidLoad()

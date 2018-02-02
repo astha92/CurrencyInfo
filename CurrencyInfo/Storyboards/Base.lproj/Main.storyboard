@@ -12,7 +12,7 @@
         <!--First-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController id="9pv-A4-QxB" customClass="CICoinListController" customModule="CurrencyInfo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CICoinListController" id="9pv-A4-QxB" customClass="CICoinListController" customModule="CurrencyInfo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -83,6 +83,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
                     <connections>
+                        <outlet property="coinLabel" destination="IkE-rr-h9z" id="n7d-PA-n8Y"/>
                         <outlet property="coinListTableView" destination="f5v-Y2-K2h" id="yZN-MR-Qh6"/>
                     </connections>
                 </viewController>

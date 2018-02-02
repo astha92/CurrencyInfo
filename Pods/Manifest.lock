@@ -20,7 +20,9 @@ PODS:
     - nanopb/encode (= 0.3.8)
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
+  - Nimble (7.0.3)
   - ObjectMapper (3.1.0)
+  - Quick (1.2.0)
   - Realm (3.1.0):
     - Realm/Headers (= 3.1.0)
   - Realm/Headers (3.1.0)
@@ -36,11 +38,29 @@ PODS:
 DEPENDENCIES:
   - Alamofire
   - Firebase/Core
+  - Nimble (from `https://github.com/Quick/Nimble.git`, branch `master`)
   - ObjectMapper (~> 3.1)
+  - Quick (from `https://github.com/Quick/Quick.git`, branch `master`)
   - RealmSwift
   - RxCocoa
   - RxRealm
   - RxSwift (~> 4.0)
+
+EXTERNAL SOURCES:
+  Nimble:
+    :branch: master
+    :git: https://github.com/Quick/Nimble.git
+  Quick:
+    :branch: master
+    :git: https://github.com/Quick/Quick.git
+
+CHECKOUT OPTIONS:
+  Nimble:
+    :commit: 22800b0954c89344bb8c87f8ab93378076716fb7
+    :git: https://github.com/Quick/Nimble.git
+  Quick:
+    :commit: 2a84abaedb07e1fb102b10fd17b5e3c52325ba46
+    :git: https://github.com/Quick/Quick.git
 
 SPEC CHECKSUMS:
   Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
@@ -50,13 +70,15 @@ SPEC CHECKSUMS:
   FirebaseInstanceID: 81df5805a08001e69138664bdd02c6719a9ac80f
   GoogleToolboxForMac: 2501e2ad72a52eb3dfe7bd9aee7dad11b858bd20
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
+  Nimble: 6254fec7d02791c7dc33722d799f2a951dd147c1
   ObjectMapper: 20505058f54e5c3ca69e1d6de9897d152a5369a6
+  Quick: 65081c7ab6eb85f9b65dbecbaf88793ce9ce47bc
   Realm: 09513d7c054678d65cd02ce09871f805b0d758ac
   RealmSwift: e868fee9b10e5490ad94b6b6ecd9027944da1824
   RxCocoa: fd0862fd2df95fa55562ad28ffd2522c25eb4a85
   RxRealm: a6c6c0a07cb61f34209969ca6657734edfdfff30
   RxSwift: c6e3b1c7b325c7d121cd4327e9d98b7ed746b570
 
-PODFILE CHECKSUM: 224f06402f0c3c1bd502beac642da220995ffbb8
+PODFILE CHECKSUM: 8da9911b3e4f73d27923dd54d92d6eb5ab3e3f14
 
 COCOAPODS: 1.2.0

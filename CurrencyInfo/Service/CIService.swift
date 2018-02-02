@@ -20,7 +20,6 @@ class CIService {
         sessionManager.request(url!).validate(statusCode: 200..<300).responseJSON { response in
             switch response.result {
             case .success:
-                print(response.result.value!)
                 guard let jsonResponse = response.result.value as? [String:Any] else {
                     return
                 }
