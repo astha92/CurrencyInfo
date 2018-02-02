@@ -9,6 +9,8 @@
 import Foundation
 import ObjectMapper
 class CICoinModel:Mappable {
+	var coinName:String?
+	var symbol:String?
     required init?(map: Map) {
         
     }
@@ -19,7 +21,7 @@ class CICoinModel:Mappable {
     }
     
     public static func getCoinDataArray(coins:[CICoinModel]) -> [CICoinInfo] {
-        var coinArray:[CICoinInfo]!
+			var coinArray: [CICoinInfo] = []
         for cModel in coins {
             coinArray.append(getCoinData(model: cModel))
         }
@@ -28,13 +30,9 @@ class CICoinModel:Mappable {
     
     public static func getCoinData(model:CICoinModel) -> CICoinInfo {
         let coin:CICoinInfo = CICoinInfo()
-        coin.coinName = "random"
-//        coin.coinName = model.coinName!
-//        coin.symbol = model.symbol!
+        coin.coinName = model.coinName!
+        coin.symbol = model.symbol!
         return coin
     }
-    
-    var coinName:String?
-    var symbol:String?
 }
 
